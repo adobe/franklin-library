@@ -86,10 +86,13 @@ workflows:
   version: 2
   build:
     jobs:
+    - build
+    # the publish-pre-release jobs needs a $NPM_TOKEN environment to be setup and also have a
+    # valid SSH_KEY added for the `github.com` host.
     - publish-pre-release:
         requires:
         - build
         filters:
           branches:
-            only: master
-    - build
+            # rename to `master` once $NPM_TOKEN and github.com ssh key is setup.
+            only: master_disabled
