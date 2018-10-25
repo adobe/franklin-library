@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe-rnd/helix-new-repository-template"
+    "url": "https://github.com/adobe-rnd/new-nodejs-repository-template"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/adobe-rnd/helix-new-repository-template/issues"
+    "url": "https://github.com/adobe-rnd/new-nodejs-repository-template/issues"
   },
-  "homepage": "https://github.com/adobe-rnd/helix-new-repository-template#readme",
+  "homepage": "https://github.com/adobe-rnd/new-nodejs-repository-template#readme",
   "dependencies": {},
   "devDependencies": {
     "ajv": "^6.5.3",
