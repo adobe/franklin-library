@@ -2,7 +2,7 @@ version: 2.1
 executors:
   node8:
     docker:
-    - image: circleci/node:8-stretch
+    - image: circleci/node:8
     environment:
       NPM_CONFIG_PREFIX: ~/.npm-global
 
