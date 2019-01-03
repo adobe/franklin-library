@@ -1,6 +1,7 @@
 ---
 name: Discussion
 about: Start a new discussion
+labels: question
 
 ---
 
