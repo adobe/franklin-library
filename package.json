@@ -4,7 +4,7 @@
   "description": "Example Package",
   "main": "src/index.js",
   "scripts": {
-    "test": "nyc mocha",
+    "test": " nyc --reporter=text --reporter=lcov --check-coverage --branches 100 --statements 100 --lines 100 mocha",
     "lint": "./node_modules/.bin/eslint .",
     "junit": "mocha --exit -R mocha-junit-reporter",
     "preversion": "npm run junit",
