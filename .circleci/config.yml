@@ -38,10 +38,10 @@ jobs:
         name: Lint
         command: npm run lint
 
-    # test & get code coverage
+      # test & get code coverage
     - run:
-        name: Getting Code Coverage
-        command: circleci tests glob test/test*.js | circleci tests split --split-by=timings | xargs ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R mocha-junit-reporter --exit && npx codecov
+        name: Test and Code Coverage
+        command: npm run test-ci
         environment:
           MOCHA_FILE: junit/test-results.xml
 
