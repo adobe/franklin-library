@@ -46,7 +46,7 @@
     "mocha-parallel-tests": "^2.1.0",
     "nyc": "^14.0.0",
     "semantic-release": "^15.13.3",
-    "snyk": "^1.161.1"
+    "snyk": "^1.161.2"
   },
   "snyk": true,
   "lint-staged": {
