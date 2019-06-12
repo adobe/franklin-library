@@ -10,19 +10,19 @@ commands:
   setup:
     steps:
     - checkout
-    - restore_cache:
-        keys:
-        - v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
+    # - restore_cache:
+    #     keys:
+    #     - v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
     - run:
         name: install npm 6.9.0
         command: sudo npm -g install npm@6.9.0
     - run:
         name: Installing Dependencies
-        command: npm install
-    - save_cache:
-        paths:
-        - node_modules
-        key: v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
+        command: npm ci
+    # - save_cache:
+    #     paths:
+    #     - node_modules
+    #     key: v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
     - run:
         name: prepare test git user
         command: git config --global user.email "circleci@example.com" && git config --global user.name "CircleCi Build"
