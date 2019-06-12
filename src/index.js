@@ -17,6 +17,6 @@
  */
 function main(name = 'world') {
   return `Hello, ${name}.`;
-};
+}
 
 module.exports = { main };
