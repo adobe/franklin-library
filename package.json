@@ -44,8 +44,6 @@
     "junit-report-builder": "^1.3.2",
     "lint-staged": "^8.1.5",
     "mocha": "^6.1.4",
-    "mocha-junit-reporter": "^1.22.0",
-    "mocha-parallel-tests": "^2.1.0",
     "nyc": "^14.0.0",
     "semantic-release": "^15.13.3",
     "snyk": "^1.171.1"
