@@ -10,6 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-module.exports = async function main() {
-  return 'Hello, world.';
+/**
+ * This is the main function
+ * @param {string} name name of the person to greet
+ * @returns {string} a greeting
+ */
+function main(name = 'world') {
+  return `Hello, ${name}.`;
 };
+
+module.exports = { main };

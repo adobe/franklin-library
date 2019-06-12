@@ -17,7 +17,7 @@ $ npm install -S @adobe/helix-library
 
 ## Usage
 
-**TODO**.
+See the [API documentation](docs/API.md).
 
 ## Development
 
