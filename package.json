@@ -1,5 +1,5 @@
 {
-  "name": "@adobe/new-package-template",
+  "name": "@adobe/helix-library",
   "version": "0.0.1",
   "description": "Example Package",
   "main": "src/index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe-rnd/new-nodejs-repository-template"
+    "url": "https://github.com/adobe/helix-library"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/adobe-rnd/new-nodejs-repository-template/issues"
+    "url": "https://github.com/adobe/helix-library/issues"
   },
-  "homepage": "https://github.com/adobe-rnd/new-nodejs-repository-template#readme",
+  "homepage": "https://github.com/adobe/helix-library#readme",
   "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
