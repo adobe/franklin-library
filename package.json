@@ -22,8 +22,7 @@
     "url": "https://github.com/adobe-rnd/new-nodejs-repository-template/issues"
   },
   "homepage": "https://github.com/adobe-rnd/new-nodejs-repository-template#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
