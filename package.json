@@ -9,9 +9,7 @@
     "lint": "./node_modules/.bin/eslint .",
     "semantic-release": "semantic-release",
     "docs": "npx jsdoc2md -c .jsdoc.json --files 'src/*.js'  > docs/API.md",
-    "commit": "git-cz",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -46,10 +44,8 @@
     "lodash": "4.17.15",
     "mocha": "6.2.1",
     "nyc": "14.1.1",
-    "semantic-release": "15.13.24",
-    "snyk": "1.235.0"
+    "semantic-release": "15.13.24"
   },
-  "snyk": true,
   "lint-staged": {
     "*.js": "eslint"
   },
