@@ -14,16 +14,6 @@ const fs = require('fs-extra');
 const chalk = require('chalk');
 const path = require('path');
 
-const excludes = [
-  'node_modules',
-  '.git',
-  'template',
-  '.vscode',
-  'create-helix-library.js',
-  'package.json',
-  'package-lock.json'
-];
-
 const patches = {
   'package.json': (buf, answers) => {
     const json = JSON.parse(buf.toString());
@@ -34,7 +24,25 @@ const patches = {
     json.homepage = `https://github.com/${answers.fullname}#readme`;
     return Buffer.from(JSON.stringify(json, null, 2));
   },
+  'README.md': (buf, answers) => {
+    const updated = buf.toString()
+      .replace(/@adobe\/helix-library/g, answers.fullscope)
+      .replace(/Helix Library/g, answers.title)
+      .replace(/An example library to be used in and with Project Helix/g, answers.description)
+      .replace(/adobe\/helix-library/g, answers.fullname);
+    return Buffer.from(updated);
+  }
 }
+
+const excludes = [
+  'node_modules',
+  '.git',
+  'template',
+  '.vscode',
+  'create-helix-library.js',
+  'package-lock.json',
+  ...Object.keys(patches)
+];
 
 function title(def) {
   if (def.match(/Helix/i)) {
