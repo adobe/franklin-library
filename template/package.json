@@ -21,9 +21,7 @@
     "url": "https://github.com/adobe/helix-library/issues"
   },
   "homepage": "https://github.com/adobe/helix-library#readme",
-  "dependencies": {
-    "inquirer": "^7.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@adobe/eslint-config-helix": "1.1.0",
     "@semantic-release/changelog": "3.0.5",
