@@ -72,7 +72,7 @@ function cleanname(def) {
   return `helix-${def}`;
 }
 
-inquirer.prompt(
+module.exports.init = inquirer.prompt(
   [{
     name: 'title',
     message: 'Title of the project (human readable)',
