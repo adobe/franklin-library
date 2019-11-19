@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
  * Copyright 2019 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -72,7 +73,7 @@ function cleanname(def) {
   return `helix-${def}`;
 }
 
-module.exports.init = inquirer.prompt(
+inquirer.prompt(
   [{
     name: 'title',
     message: 'Title of the project (human readable)',

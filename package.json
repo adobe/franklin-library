@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Create Helix Library",
   "main": "create-helix-library.js",
+  "bin": {
+    "create-helix-library": "create-helix-library.js"
+  },
   "scripts": {
     "test": " nyc --reporter=text --reporter=lcov --check-coverage --branches 100 --statements 100 --lines 100 mocha",
     "test-ci": "nyc --reporter=text --reporter=lcov --check-coverage --branches 100 --statements 100 --lines 100 mocha --reporter xunit --reporter-options output=./junit/test-results.xml && codecov",
