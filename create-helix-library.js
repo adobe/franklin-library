@@ -9,6 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+/* eslint-disable no-console */
 const inquirer = require('inquirer');
 const fs = require('fs-extra');
 const chalk = require('chalk');
@@ -21,9 +22,9 @@ function execp(command) {
       if (err) {
         reject(err);
       }
-      resolve(stdout);
+      resolve(stdout + stderr);
     });
-  })
+  });
 }
 
 const patches = {
@@ -44,8 +45,8 @@ const patches = {
       .replace(/adobe\/helix-library/g, answers.fullname);
     return Buffer.from(updated);
   },
-  'package-lock.json': (buf) => buf
-}
+  'package-lock.json': (buf) => buf,
+};
 
 const excludes = [
   'node_modules',
@@ -54,17 +55,17 @@ const excludes = [
   '.vscode',
   'create-helix-library.js',
   'package-lock.json',
-  ...Object.keys(patches)
+  ...Object.keys(patches),
 ];
 
-function title(def) {
+function cleantitle(def) {
   if (def.match(/Helix/i)) {
     return def;
   }
   return `Helix ${def}`;
 }
 
-function name(def) {
+function cleanname(def) {
   if (def.match(/Helix/i)) {
     return def;
   }
@@ -75,91 +76,91 @@ inquirer.prompt(
   [{
     name: 'title',
     message: 'Title of the project (human readable)',
-    default: title(process.argv.slice(2).join(' '))
+    default: cleantitle(process.argv.slice(2).join(' ')),
   },
   {
     name: 'name',
     message: 'Name of the project (lowercase, for GitHub)',
-    default: (({title}) => name(title.toLowerCase().replace(/ /g, '-')))
+    default: (({ title }) => cleanname(title.toLowerCase().replace(/ /g, '-'))),
   },
   {
     name: 'npmorg',
     message: 'Name of the org (for NPM)',
-    default: 'adobe'
+    default: 'adobe',
   },
   {
     name: 'gitorg',
     message: 'Name of the org (for GitHub)',
-    default: 'adobe'
+    default: 'adobe',
   },
   {
     name: 'description',
     message: 'Description (for the README)',
-    default: 'An example library to be used in and with Project Helix'
-  }
-]
+    default: 'An example library to be used in and with Project Helix',
+  },
+  ],
 )
-.then(answers => ({
-  ...answers,
-  fullname: `${answers.gitorg}/${answers.name}`,
-  fullscope: `@${answers.npmorg}/${answers.name}`
-}))
-.then(async answers => {
-  await fs.mkdir(answers.name);
-  console.log('\nCreated directory ' + chalk.blue(answers.name)+'\n');
-  return answers;
-})
-.then(async answers => {
-  await fs.copy(path.resolve(__dirname), answers.name, {
-    filter: (name) => {
-      const relative = path.relative(__dirname, name);
-      if (relative==='') {
+  .then((answers) => ({
+    ...answers,
+    fullname: `${answers.gitorg}/${answers.name}`,
+    fullscope: `@${answers.npmorg}/${answers.name}`,
+  }))
+  .then(async (answers) => {
+    await fs.mkdir(answers.name);
+    console.log(`\nCreated directory ${chalk.blue(answers.name)}\n`);
+    return answers;
+  })
+  .then(async (answers) => {
+    await fs.copy(path.resolve(__dirname), answers.name, {
+      filter: (name) => {
+        const relative = path.relative(__dirname, name);
+        if (relative === '') {
+          return true;
+        }
+        if (excludes.indexOf(relative) >= 0) {
+          console.log(`Skipping ${chalk.red(relative)}`);
+          return false;
+        }
+        if (fs.lstatSync(name).isFile()) {
+          console.log(`Copying ${chalk.blue(relative)}`);
+        }
         return true;
-      }
-      if (excludes.indexOf(relative)>=0) {
-        console.log('Skipping ' + chalk.red(relative));
-        return false;
-      }
-      if (fs.lstatSync(name).isFile()) {
-        console.log('Copying ' + chalk.blue(relative));
-      }
-      return true;
-    }
-  });
-  console.log('Copying ' + chalk.blue.bold('completed\n'));
-  return answers;
-})
-.then(answers => {
-  return Object.keys(patches).map(patchfile => ({
+      },
+    });
+    console.log(`Copying ${chalk.blue.bold('completed\n')}`);
+    return answers;
+  })
+  .then((answers) => Object.keys(patches).map((patchfile) => ({
     from: path.resolve(__dirname, 'template', patchfile),
     to: path.resolve(answers.name, patchfile),
     buf: fs.readFile(path.resolve(__dirname, 'template', patchfile)),
     fn: patches[patchfile],
-    answers
-  }));
-})
-.then(async patchjobs => {
-  let answer = null;
-  await Promise.all(patchjobs.map(async ({buf, to, fn, answers}) => {
-    answer = answers;
-    console.log('Patching ' + chalk.green(path.basename(to)));
-    const res = fn(await buf, answers);
-    return fs.writeFile(to, res);
-  }));
-  console.log('Patching ' + chalk.green.bold('completed\n'));
-  return answer;
-})
-.then(async answers => {
-  const cwd = process.cwd();
-  process.chdir(answers.name);
+    answers,
+  })))
+  .then(async (patchjobs) => {
+    let answer = null;
+    await Promise.all(patchjobs.map(async ({
+      buf, to, fn, answers,
+    }) => {
+      answer = answers;
+      console.log(`Patching ${chalk.green(path.basename(to))}`);
+      const res = fn(await buf, answers);
+      return fs.writeFile(to, res);
+    }));
+    console.log(`Patching ${chalk.green.bold('completed\n')}`);
+    return answer;
+  })
+  .then(async (answers) => {
+    const cwd = process.cwd();
+    process.chdir(answers.name);
 
-  await execp(`git init`);
-  await execp(`git remote add origin https://github.com/${answers.fullname}.git`);
-  await execp(`git add -A`);
-  await execp(`git commit -m 'chore(init): created repository from template'`);
+    await execp('git init');
+    await execp(`git remote add origin https://github.com/${answers.fullname}.git`);
+    await execp('git add -A');
+    await execp('git commit -m \'chore(init): created repository from template\'');
 
-  console.log('\n\nProject ' + chalk.blue(answers.name) + ' initialized. You can now push to GitHub\n');
-  console.log(chalk.grey(`  $ cd `) + chalk.grey.bold(answers.name));
-  console.log(chalk.grey(`  $ git push --set-upstream origin master \n\n`));
-  process.chdir(cwd);
-});
+    console.log(`\n\nProject ${chalk.blue(answers.name)} initialized. You can now push to GitHub\n`);
+    console.log(chalk.grey('  $ cd ') + chalk.grey.bold(answers.name));
+    console.log(chalk.grey('  $ git push --set-upstream origin master \n\n'));
+    process.chdir(cwd);
+  });
