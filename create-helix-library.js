@@ -13,6 +13,18 @@ const inquirer = require('inquirer');
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const path = require('path');
+const { exec } = require('child_process');
+
+function execp(command) {
+  return new Promise((resolve, reject) => {
+    exec(command, (err, stdout, stderr) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(stdout);
+    });
+  })
+}
 
 const patches = {
   'package.json': (buf, answers) => {
@@ -89,11 +101,11 @@ inquirer.prompt(
 }))
 .then(async answers => {
   await fs.mkdir(answers.name);
-  console.log('Created directory ' + chalk.blue(answers.name));
+  console.log('\nCreated directory ' + chalk.blue(answers.name)+'\n');
   return answers;
 })
 .then(async answers => {
-  fs.copy(path.resolve(__dirname), answers.name, {
+  await fs.copy(path.resolve(__dirname), answers.name, {
     filter: (name) => {
       const relative = path.relative(__dirname, name);
       if (relative==='') {
@@ -109,6 +121,7 @@ inquirer.prompt(
       return true;
     }
   });
+  console.log('Copying ' + chalk.blue.bold('completed\n'));
   return answers;
 })
 .then(answers => {
@@ -118,12 +131,30 @@ inquirer.prompt(
     buf: fs.readFile(path.resolve(__dirname, 'template', patchfile)),
     fn: patches[patchfile],
     answers
-  }))
+  }));
 })
-.then(patchjobs => {
-  patchjobs.map(async ({buf, to, fn, answers}) => {
+.then(async patchjobs => {
+  let answer = null;
+  await Promise.all(patchjobs.map(async ({buf, to, fn, answers}) => {
+    answer = answers;
     console.log('Patching ' + chalk.green(path.basename(to)));
     const res = fn(await buf, answers);
-    fs.writeFile(to, res);
-  });
+    return fs.writeFile(to, res);
+  }));
+  console.log('Patching ' + chalk.green.bold('completed\n'));
+  return answer;
+})
+.then(async answers => {
+  const cwd = process.cwd();
+  process.chdir(answers.name);
+
+  await execp(`git init`);
+  await execp(`git remote add origin https://github.com/${answers.fullname}.git`);
+  await execp(`git add -A`);
+  await execp(`git commit -m 'chore(init): created repository from template'`);
+
+  console.log('\n\nProject ' + chalk.blue(answers.name) + ' initialized. You can now push to GitHub\n');
+  console.log(chalk.grey(`  $ cd `) + chalk.grey.bold(answers.name));
+  console.log(chalk.grey(`  $ git push --set-upstream origin master \n\n`));
+  process.chdir(cwd);
 });
