@@ -31,7 +31,8 @@ const patches = {
       .replace(/An example library to be used in and with Project Helix/g, answers.description)
       .replace(/adobe\/helix-library/g, answers.fullname);
     return Buffer.from(updated);
-  }
+  },
+  'package-lock.json': (buf) => buf
 }
 
 const excludes = [
@@ -102,7 +103,9 @@ inquirer.prompt(
         console.log('Skipping ' + chalk.red(relative));
         return false;
       }
-      console.log('Copying ' + chalk.blue(relative));
+      if (fs.lstatSync(name).isFile()) {
+        console.log('Copying ' + chalk.blue(relative));
+      }
       return true;
     }
   });
@@ -119,7 +122,7 @@ inquirer.prompt(
 })
 .then(patchjobs => {
   patchjobs.map(async ({buf, to, fn, answers}) => {
-    console.log('Patching ' + chalk.green(to));
+    console.log('Patching ' + chalk.green(path.basename(to)));
     const res = fn(await buf, answers);
     fs.writeFile(to, res);
   });
