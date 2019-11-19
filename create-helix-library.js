@@ -83,8 +83,13 @@ inquirer.prompt(
     default: (({title}) => name(title.toLowerCase().replace(/ /g, '-')))
   },
   {
-    name: 'org',
+    name: 'npmorg',
     message: 'Name of the org (for NPM)',
+    default: 'adobe'
+  },
+  {
+    name: 'gitorg',
+    message: 'Name of the org (for GitHub)',
     default: 'adobe'
   },
   {
@@ -96,8 +101,8 @@ inquirer.prompt(
 )
 .then(answers => ({
   ...answers,
-  fullname: `${answers.org}/${answers.name}`,
-  fullscope: `@${answers.org}/${answers.name}`
+  fullname: `${answers.gitorg}/${answers.name}`,
+  fullscope: `@${answers.npmorg}/${answers.name}`
 }))
 .then(async answers => {
   await fs.mkdir(answers.name);
