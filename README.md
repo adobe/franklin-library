@@ -1,6 +1,6 @@
-# Helix Library
+# (Create) Helix Library
 
-> An example library to be used in and with Project Helix
+> Bootstrap your Project Helix library using `npm init helix-library`
 
 ## Status
 [![codecov](https://img.shields.io/codecov/c/github/adobe/helix-library.svg)](https://codecov.io/gh/adobe/helix-library)
@@ -12,13 +12,19 @@
 
 ## Installation
 
-```bash
-$ npm install -S @adobe/helix-library
-```
+Not needed.
 
 ## Usage
 
-See the [API documentation](docs/API.md).
+```bash
+$ npm init helix-library
+```
+
+Demo here:
+
+https://asciinema.org/a/ZgBXcXnV98lUKRcxq2mchNisQ
+
+`create-helix-library` will ask you a few questions and then bootstrap the library for you. All you have to do is change to the newly created directly and push to GitHub.
 
 ## Development
 
