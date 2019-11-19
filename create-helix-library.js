@@ -10,6 +10,31 @@
  * governing permissions and limitations under the License.
  */
 const inquirer = require('inquirer');
+const fs = require('fs-extra');
+const chalk = require('chalk');
+const path = require('path');
+
+const excludes = [
+  'node_modules',
+  '.git',
+  'template',
+  '.vscode',
+  'create-helix-library.js',
+  'package.json',
+  'package-lock.json'
+];
+
+const patches = {
+  'package.json': (buf, answers) => {
+    const json = JSON.parse(buf.toString());
+    json.name = answers.fullscope;
+    json.description = answers.title;
+    json.repository.url = `https://github.com/${answers.fullname}`;
+    json.bugs.url = `https://github.com/${answers.fullname}/issues`;
+    json.homepage = `https://github.com/${answers.fullname}#readme`;
+    return Buffer.from(JSON.stringify(json, null, 2));
+  },
+}
 
 function title(def) {
   if (def.match(/Helix/i)) {
@@ -53,4 +78,41 @@ inquirer.prompt(
   fullname: `${answers.org}/${answers.name}`,
   fullscope: `@${answers.org}/${answers.name}`
 }))
-.then(answers => console.log(answers));
+.then(async answers => {
+  await fs.mkdir(answers.name);
+  console.log('Created directory ' + chalk.blue(answers.name));
+  return answers;
+})
+.then(async answers => {
+  fs.copy(path.resolve(__dirname), answers.name, {
+    filter: (name) => {
+      const relative = path.relative(__dirname, name);
+      if (relative==='') {
+        return true;
+      }
+      if (excludes.indexOf(relative)>=0) {
+        console.log('Skipping ' + chalk.red(relative));
+        return false;
+      }
+      console.log('Copying ' + chalk.blue(relative));
+      return true;
+    }
+  });
+  return answers;
+})
+.then(answers => {
+  return Object.keys(patches).map(patchfile => ({
+    from: path.resolve(__dirname, 'template', patchfile),
+    to: path.resolve(answers.name, patchfile),
+    buf: fs.readFile(path.resolve(__dirname, 'template', patchfile)),
+    fn: patches[patchfile],
+    answers
+  }))
+})
+.then(patchjobs => {
+  patchjobs.map(async ({buf, to, fn, answers}) => {
+    console.log('Patching ' + chalk.green(to));
+    const res = fn(await buf, answers);
+    fs.writeFile(to, res);
+  });
+});
