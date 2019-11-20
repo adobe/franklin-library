@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/adobe/helix-library/compare/v1.0.1...v1.1.0) (2019-11-20)
+
+
+### Bug Fixes
+
+* **init:** include test files in new repo ([d6e28c6](https://github.com/adobe/helix-library/commit/d6e28c637215e5332fce9cc6919e88b2d63f1b22)), closes [#63](https://github.com/adobe/helix-library/issues/63)
+
+
+### Features
+
+* **init:** expose init as an extensible function ([8544810](https://github.com/adobe/helix-library/commit/85448100e7f0f15979db900bb975b691906e86d7))
+
 ## [1.0.1](https://github.com/adobe/helix-library/compare/v1.0.0...v1.0.1) (2019-11-20)
 
 
