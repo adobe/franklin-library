@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/adobe/helix-library/compare/v1.0.0...v1.0.1) (2019-11-20)
+
+
+### Bug Fixes
+
+* **init:** include files from npmignore in templates ([e17618b](https://github.com/adobe/helix-library/commit/e17618b86f3efd38fc586a451b30a0b0e52d2792)), closes [#62](https://github.com/adobe/helix-library/issues/62)
+
 # 1.0.0 (2019-11-20)
 
 
