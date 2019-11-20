@@ -1,6 +1,6 @@
 # (Create) Helix Library
 
-> Bootstrap your Project Helix library using `npm init helix-library`
+> Bootstrap your Project Helix library using `npm init @adobe/helix-library`
 
 ## Status
 [![codecov](https://img.shields.io/codecov/c/github/adobe/helix-library.svg)](https://codecov.io/gh/adobe/helix-library)
@@ -17,7 +17,7 @@ Not needed.
 ## Usage
 
 ```bash
-$ npm init helix-library
+$ npm init @adobe/helix-library
 ```
 
 Demo here:
