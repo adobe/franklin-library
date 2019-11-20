@@ -12,4 +12,6 @@
  */
 const init = require('./create-helix-shared');
 
+// eslint-disable-next-line no-console
+console.log('Creating a new Helix Library');
 init(__dirname);
