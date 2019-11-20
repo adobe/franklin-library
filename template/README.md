@@ -13,7 +13,7 @@
 ## Installation
 
 ```bash
-$ npm install -S @adobe/helix-library
+$ npm install @adobe/helix-library
 ```
 
 ## Usage
