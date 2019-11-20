@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/adobe/helix-library/compare/v1.1.0...v1.1.1) (2019-11-20)
+
+
+### Bug Fixes
+
+* **template:** remove old NPM option ([d2b1279](https://github.com/adobe/helix-library/commit/d2b1279f33abcae92010512d4abca1ca35161e2c))
+
 # [1.1.0](https://github.com/adobe/helix-library/compare/v1.0.1...v1.1.0) (2019-11-20)
 
 
