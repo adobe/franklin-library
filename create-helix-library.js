@@ -47,6 +47,10 @@ const patches = {
     return Buffer.from(updated);
   },
   'package-lock.json': (buf) => buf,
+  '.eslintignore': (buf) => buf,
+  '.eslintrc.js': (buf) => buf,
+  '.releaserc.js': (buf) => buf,
+  '.npmignore': (buf) => buf,
 };
 
 const excludes = [
