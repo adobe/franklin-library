@@ -18,6 +18,20 @@ const chalk = require('chalk');
 const path = require('path');
 const { exec } = require('child_process');
 
+function cleantitle(def) {
+  if (def.match(/Helix/i)) {
+    return def;
+  }
+  return `Helix ${def}`;
+}
+
+function cleanname(def) {
+  if (def.match(/Helix/i)) {
+    return def;
+  }
+  return `helix-${def}`;
+}
+
 function execp(command) {
   return new Promise((resolve, reject) => {
     exec(command, (err, stdout, stderr) => {
@@ -29,7 +43,7 @@ function execp(command) {
   });
 }
 
-function init(basedir, morepatches = []) {
+function init(basedir, morepatches = [], morequestions = []) {
   const patches = {
     'package.json': (buf, answers) => {
       const json = JSON.parse(buf.toString());
@@ -56,6 +70,34 @@ function init(basedir, morepatches = []) {
     ...morepatches,
   };
 
+  const questions = [{
+    name: 'title',
+    message: 'Title of the project (human readable)',
+    default: cleantitle(process.argv.slice(2).join(' ')),
+  },
+  {
+    name: 'name',
+    message: 'Name of the project (lowercase, for GitHub)',
+    default: (({ title }) => cleanname(title.toLowerCase().replace(/ /g, '-'))),
+  },
+  {
+    name: 'npmorg',
+    message: 'Name of the org (for NPM)',
+    default: 'adobe',
+  },
+  {
+    name: 'gitorg',
+    message: 'Name of the org (for GitHub)',
+    default: 'adobe',
+  },
+  {
+    name: 'description',
+    message: 'Description (for the README)',
+    default: 'An example library to be used in and with Project Helix',
+  },
+  ...morequestions,
+  ];
+
   const excludes = [
     'node_modules',
     '.git',
@@ -67,48 +109,7 @@ function init(basedir, morepatches = []) {
     ...Object.keys(patches),
   ];
 
-  function cleantitle(def) {
-    if (def.match(/Helix/i)) {
-      return def;
-    }
-    return `Helix ${def}`;
-  }
-
-  function cleanname(def) {
-    if (def.match(/Helix/i)) {
-      return def;
-    }
-    return `helix-${def}`;
-  }
-
-  inquirer.prompt(
-    [{
-      name: 'title',
-      message: 'Title of the project (human readable)',
-      default: cleantitle(process.argv.slice(2).join(' ')),
-    },
-    {
-      name: 'name',
-      message: 'Name of the project (lowercase, for GitHub)',
-      default: (({ title }) => cleanname(title.toLowerCase().replace(/ /g, '-'))),
-    },
-    {
-      name: 'npmorg',
-      message: 'Name of the org (for NPM)',
-      default: 'adobe',
-    },
-    {
-      name: 'gitorg',
-      message: 'Name of the org (for GitHub)',
-      default: 'adobe',
-    },
-    {
-      name: 'description',
-      message: 'Description (for the README)',
-      default: 'An example library to be used in and with Project Helix',
-    },
-    ],
-  )
+  inquirer.prompt(questions)
     .then((answers) => ({
       ...answers,
       fullname: `${answers.gitorg}/${answers.name}`,
