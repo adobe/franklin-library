@@ -67,6 +67,7 @@ function init(basedir, morepatches = [], morequestions = []) {
     '.eslintrc.js': (buf) => buf,
     '.releaserc.js': (buf) => buf,
     '.npmignore': (buf) => buf,
+    '.gitignore': (buf) => buf,
     ...morepatches,
   };
 
