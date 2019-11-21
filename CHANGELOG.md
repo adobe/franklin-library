@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/adobe/helix-library/compare/v1.2.0...v1.2.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **init:** add gitignore ([279fb38](https://github.com/adobe/helix-library/commit/279fb38042702868eb3c8c5a9a1765a903637b6b)), closes [#64](https://github.com/adobe/helix-library/issues/64)
+
 # [1.2.0](https://github.com/adobe/helix-library/compare/v1.1.1...v1.2.0) (2019-11-21)
 
 
