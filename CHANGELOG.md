@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/adobe/helix-library/compare/v1.1.1...v1.2.0) (2019-11-21)
+
+
+### Features
+
+* **init:** make the list of questions extensible ([d94684f](https://github.com/adobe/helix-library/commit/d94684fddd5dc1874f991f795968a0928fcf5a88))
+
 ## [1.1.1](https://github.com/adobe/helix-library/compare/v1.1.0...v1.1.1) (2019-11-20)
 
 
