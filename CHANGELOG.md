@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/adobe/helix-library/compare/v1.2.1...v1.3.0) (2019-11-21)
+
+
+### Features
+
+* **circleci:** use Contexts for Env var management ([28837b5](https://github.com/adobe/helix-library/commit/28837b50f470594dfa93554701b28528d6f6bf1b))
+
 ## [1.2.1](https://github.com/adobe/helix-library/compare/v1.2.0...v1.2.1) (2019-11-21)
 
 
