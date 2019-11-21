@@ -71,7 +71,9 @@ workflows:
     jobs:
     - build
     # the release jobs needs a $NPM_TOKEN and $GH_TOKEN environment to be setup
+    # but this should be covered by the CircleCI contexts setting below
     - release:
+        context: Project Helix
         requires:
         - build
         filters:
