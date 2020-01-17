@@ -32,6 +32,14 @@ function cleanname(def) {
   return `helix-${def}`;
 }
 
+function dottify(filename) {
+  if (filename.startsWith('dot-')) {
+    return `.${filename.substring(4)}`;
+  } else {
+    return filename;
+  }
+}
+
 function execp(command) {
   return new Promise((resolve, reject) => {
     exec(command, (err, stdout, stderr) => {
@@ -63,11 +71,11 @@ function init(basedir, morepatches = [], morequestions = []) {
       return Buffer.from(updated);
     },
     'package-lock.json': (buf) => buf,
-    '.eslintignore': (buf) => buf,
-    '.eslintrc.js': (buf) => buf,
-    '.releaserc.js': (buf) => buf,
-    '.npmignore': (buf) => buf,
-    '.gitignore': (buf) => buf,
+    'dot-eslintignore': (buf) => buf,
+    'dot-eslintrc.js': (buf) => buf,
+    'dot-releaserc.js': (buf) => buf,
+    'dot-npmignore': (buf) => buf,
+    'dot-gitignore': (buf) => buf,
     ...morepatches,
   };
 
@@ -143,7 +151,7 @@ function init(basedir, morepatches = [], morequestions = []) {
     })
     .then((answers) => Object.keys(patches).map((patchfile) => ({
       from: path.resolve(basedir, 'template', patchfile),
-      to: path.resolve(answers.name, patchfile),
+      to: path.resolve(answers.name, dottify(patchfile)),
       buf: fs.readFile(path.resolve(basedir, 'template', patchfile)),
       fn: patches[patchfile],
       answers,
