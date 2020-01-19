@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/adobe/helix-library/compare/v1.3.0...v1.3.1) (2020-01-19)
+
+
+### Bug Fixes
+
+* **create:** ensure that dot files are included in npm released package ([#76](https://github.com/adobe/helix-library/issues/76)) ([a6a4944](https://github.com/adobe/helix-library/commit/a6a49441cec95bac8fa5cc8872e9fc2fba200a0b)), closes [#29](https://github.com/adobe/helix-library/issues/29)
+
 # [1.3.0](https://github.com/adobe/helix-library/compare/v1.2.1...v1.3.0) (2019-11-21)
 
 
