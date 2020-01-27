@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/adobe/helix-library/compare/v1.3.1...v1.3.2) (2020-01-27)
+
+
+### Bug Fixes
+
+* **ci:** update ci ([#80](https://github.com/adobe/helix-library/issues/80)) ([4ce4230](https://github.com/adobe/helix-library/commit/4ce42308d13ee648f515378374d1f9364245c810))
+
 ## [1.3.1](https://github.com/adobe/helix-library/compare/v1.3.0...v1.3.1) (2020-01-19)
 
 

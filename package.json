@@ -1,6 +1,6 @@
 {
   "name": "@adobe/create-helix-library",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Create Helix Library",
   "main": "create-helix-shared.js",
   "bin": {
