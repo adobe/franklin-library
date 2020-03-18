@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/adobe/helix-library/compare/v1.3.2...v1.4.0) (2020-03-18)
+
+
+### Features
+
+* **build:** add GitHub actions config ([e059085](https://github.com/adobe/helix-library/commit/e059085ac893712b0f503d511bab6af9ff175f6a))
+
 ## [1.3.2](https://github.com/adobe/helix-library/compare/v1.3.1...v1.3.2) (2020-01-27)
 
 
