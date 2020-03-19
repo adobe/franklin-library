@@ -114,6 +114,7 @@ function init(basedir, morepatches = [], morequestions = []) {
     '.vscode',
     'create-helix-library.js',
     'create-helix-shared.js',
+    'create-helix-service.js',
     'package-lock.json',
     ...Object.keys(patches),
   ];
