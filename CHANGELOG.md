@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/adobe/helix-library/compare/v1.4.0...v1.4.1) (2020-03-19)
+
+
+### Bug Fixes
+
+* **index:** do not copy create-helix-service.js ([c3888b5](https://github.com/adobe/helix-library/commit/c3888b5bc2a47022a210f71806b01883f756d42a))
+
 # [1.4.0](https://github.com/adobe/helix-library/compare/v1.3.2...v1.4.0) (2020-03-18)
 
 
