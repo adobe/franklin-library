@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/adobe/helix-library/compare/v1.4.1...v1.4.2) (2020-03-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v9 ([#93](https://github.com/adobe/helix-library/issues/93)) ([c6dcea6](https://github.com/adobe/helix-library/commit/c6dcea67c54733b29d29980dca49ad4db30698df))
+
 ## [1.4.1](https://github.com/adobe/helix-library/compare/v1.4.0...v1.4.1) (2020-03-19)
 
 
