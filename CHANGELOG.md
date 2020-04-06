@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/adobe/helix-library/compare/v1.4.2...v1.4.3) (2020-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency chalk to v4 ([#95](https://github.com/adobe/helix-library/issues/95)) ([6e1812b](https://github.com/adobe/helix-library/commit/6e1812b5533e23dcf6eb6cb32898683e4329fd86))
+
 ## [1.4.2](https://github.com/adobe/helix-library/compare/v1.4.1...v1.4.2) (2020-03-24)
 
 
