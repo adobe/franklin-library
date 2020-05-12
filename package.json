@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe/helix-library"
+    "url": "https://github.com/adobe/helix-library.git"
   },
   "author": "",
   "license": "Apache-2.0",
