@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/adobe/helix-library/compare/v1.4.3...v1.4.4) (2020-08-21)
+
+
+### Bug Fixes
+
+* **git:** use main branch ([d2afe19](https://github.com/adobe/helix-library/commit/d2afe19d929e1bdfa7ff4e7d68e5ffa9fd87c30c))
+
 ## [1.4.3](https://github.com/adobe/helix-library/compare/v1.4.2...v1.4.3) (2020-04-06)
 
 
