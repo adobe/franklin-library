@@ -174,7 +174,8 @@ function init(basedir, morepatches = [], morequestions = []) {
       const cwd = process.cwd();
       process.chdir(answers.name);
 
-      await execp('git init -b main');
+      await execp('git init');
+      await execp('git checkout -b main');
       await execp(`git remote add origin https://github.com/${answers.fullname}.git`);
       await execp('git add -A');
       await execp('git commit -m \'chore(init): created repository from template\'');
