@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/adobe/helix-library/compare/v1.4.4...v1.4.5) (2020-10-02)
+
+
+### Bug Fixes
+
+* git init fails with -b argument ([#137](https://github.com/adobe/helix-library/issues/137)) ([5517a7f](https://github.com/adobe/helix-library/commit/5517a7f4e70862cad141f6bacef07bb085e719ce)), closes [#136](https://github.com/adobe/helix-library/issues/136)
+
 ## [1.4.4](https://github.com/adobe/helix-library/compare/v1.4.3...v1.4.4) (2020-08-21)
 
 
