@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/adobe/helix-library/compare/v1.4.6...v1.4.7) (2021-04-09)
+
+
+### Bug Fixes
+
+* **template:** adjust some files ([#175](https://github.com/adobe/helix-library/issues/175)) ([e2d4ae2](https://github.com/adobe/helix-library/commit/e2d4ae26af04487eb9943ce337a613608ddabb67))
+
 ## [1.4.6](https://github.com/adobe/helix-library/compare/v1.4.5...v1.4.6) (2021-03-02)
 
 
