@@ -76,6 +76,7 @@ function init(basedir, morepatches = [], morequestions = []) {
     'dot-releaserc.js': (buf) => buf,
     'dot-npmignore': (buf) => buf,
     'dot-gitignore': (buf) => buf,
+    'dot-renovaterc.json': (buf) => buf,
     ...morepatches,
   };
 
