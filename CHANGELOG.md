@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/adobe/helix-library/compare/v1.4.7...v1.4.8) (2021-04-15)
+
+
+### Bug Fixes
+
+* **template:** add renovaterc to template ([2a1161c](https://github.com/adobe/helix-library/commit/2a1161c211df672de35a26004b92e82ccf754e0d)), closes [#177](https://github.com/adobe/helix-library/issues/177)
+
 ## [1.4.7](https://github.com/adobe/helix-library/compare/v1.4.6...v1.4.7) (2021-04-09)
 
 
