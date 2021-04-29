@@ -1,3 +1,10 @@
+## [1.4.9](https://github.com/adobe/helix-library/compare/v1.4.8...v1.4.9) (2021-04-29)
+
+
+### Bug Fixes
+
+* **init:** package-lock in template is not package (anymore?) ([93a4253](https://github.com/adobe/helix-library/commit/93a42539a0b2c0b7aceaecf801e3529a7a4acc17))
+
 ## [1.4.8](https://github.com/adobe/helix-library/compare/v1.4.7...v1.4.8) (2021-04-15)
 
 
