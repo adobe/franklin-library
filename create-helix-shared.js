@@ -70,7 +70,6 @@ function init(basedir, morepatches = [], morequestions = []) {
         .replace(/adobe\/helix-library/g, answers.fullname);
       return Buffer.from(updated);
     },
-    'package-lock.json': (buf) => buf,
     'dot-eslintignore': (buf) => buf,
     'dot-eslintrc.js': (buf) => buf,
     'dot-releaserc.js': (buf) => buf,
