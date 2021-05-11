@@ -1,3 +1,10 @@
+## [1.4.10](https://github.com/adobe/helix-library/compare/v1.4.9...v1.4.10) (2021-05-11)
+
+
+### Bug Fixes
+
+* **deps:** update external major ([#187](https://github.com/adobe/helix-library/issues/187)) ([3e23240](https://github.com/adobe/helix-library/commit/3e23240189a74185b361d1af7b97d8b2f15fff4e))
+
 ## [1.4.9](https://github.com/adobe/helix-library/compare/v1.4.8...v1.4.9) (2021-04-29)
 
 
