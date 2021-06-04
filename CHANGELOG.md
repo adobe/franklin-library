@@ -1,3 +1,10 @@
+## [1.4.11](https://github.com/adobe/helix-library/compare/v1.4.10...v1.4.11) (2021-06-04)
+
+
+### Bug Fixes
+
+* update to latest versions ([f6fc0cc](https://github.com/adobe/helix-library/commit/f6fc0cc115ac76bfc3cf12bd637b0ed2a3c729fb))
+
 ## [1.4.10](https://github.com/adobe/helix-library/compare/v1.4.9...v1.4.10) (2021-05-11)
 
 
