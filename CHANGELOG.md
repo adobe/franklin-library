@@ -1,3 +1,10 @@
+## [1.4.12](https://github.com/adobe/helix-library/compare/v1.4.11...v1.4.12) (2021-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint to v8 ([#216](https://github.com/adobe/helix-library/issues/216)) ([77186c0](https://github.com/adobe/helix-library/commit/77186c0baada6a3986c42efce124eba7c59baa2e))
+
 ## [1.4.11](https://github.com/adobe/helix-library/compare/v1.4.10...v1.4.11) (2021-06-04)
 
 
