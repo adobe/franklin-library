@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Adobe. All rights reserved.
+ * Copyright 2021 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -12,14 +12,12 @@
 
 /* eslint-env mocha */
 
-'use strict';
-
-const assert = require('assert');
-const index = require('../src/index.js').main;
+import assert from 'assert';
+import { main } from '../src/index.js';
 
 describe('Index Tests', () => {
   it('index function is present', async () => {
-    const result = await index();
-    assert.equal(result, 'Hello, world.');
+    const result = await main();
+    assert.strictEqual(result, 'Hello, world.');
   });
 });

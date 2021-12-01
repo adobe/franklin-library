@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Adobe. All rights reserved.
+ * Copyright 2021 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -10,13 +10,11 @@
  * governing permissions and limitations under the License.
  */
 /* eslint-disable no-console */
-
-/* eslint-disable no-console */
-const inquirer = require('inquirer');
-const fs = require('fs-extra');
-const chalk = require('chalk');
-const path = require('path');
-const { exec } = require('child_process');
+import inquirer from 'inquirer';
+import fs from 'fs-extra';
+import chalk from 'chalk-template';
+import path from 'path';
+import { exec } from 'child_process';
 
 function cleantitle(def) {
   if (def.match(/Helix/i)) {
@@ -51,7 +49,7 @@ function execp(command) {
   });
 }
 
-function init(basedir, morepatches = [], morequestions = []) {
+export default function init(basedir, morepatches = [], morequestions = []) {
   const patches = {
     'package.json': (buf, answers) => {
       const json = JSON.parse(buf.toString());
@@ -70,13 +68,10 @@ function init(basedir, morepatches = [], morequestions = []) {
         .replace(/adobe\/helix-library/g, answers.fullname);
       return Buffer.from(updated);
     },
+    'CHANGELOG.md': (buf) => buf,
     'dot-eslintignore': (buf) => buf,
-    'dot-eslintrc.js': (buf) => buf,
-    'dot-releaserc.js': (buf) => buf,
     'dot-npmignore': (buf) => buf,
     'dot-gitignore': (buf) => buf,
-    'dot-nycrc.json': (buf) => buf,
-    'dot-renovaterc.json': (buf) => buf,
     ...morepatches,
   };
 
@@ -117,6 +112,7 @@ function init(basedir, morepatches = [], morequestions = []) {
     'create-helix-shared.js',
     'create-helix-service.js',
     'package-lock.json',
+    'CHANGELOG.md',
     ...Object.keys(patches),
   ];
 
@@ -128,7 +124,7 @@ function init(basedir, morepatches = [], morequestions = []) {
     }))
     .then(async (answers) => {
       await fs.mkdir(answers.name);
-      console.log(`\nCreated directory ${chalk.blue(answers.name)}\n`);
+      console.log(chalk`\nCreated directory {blue ${answers.name}}\n`);
       return answers;
     })
     .then(async (answers) => {
@@ -139,16 +135,16 @@ function init(basedir, morepatches = [], morequestions = []) {
             return true;
           }
           if (excludes.indexOf(relative) >= 0) {
-            console.log(`Skipping ${chalk.red(relative)}`);
+            console.log(chalk`Skipping {red ${relative}}`);
             return false;
           }
           if (fs.lstatSync(name).isFile()) {
-            console.log(`Copying ${chalk.blue(relative)}`);
+            console.log(chalk`Copying {blue ${relative}}`);
           }
           return true;
         },
       });
-      console.log(`Copying ${chalk.blue.bold('completed\n')}`);
+      console.log(chalk`Copying {blue.bold completed}\n`);
       return answers;
     })
     .then((answers) => Object.keys(patches).map((patchfile) => ({
@@ -164,11 +160,11 @@ function init(basedir, morepatches = [], morequestions = []) {
         buf, to, fn, answers,
       }) => {
         answer = answers;
-        console.log(`Patching ${chalk.green(path.basename(to))}`);
+        console.log(chalk`Patching {green ${path.basename(to)}}`);
         const res = fn(await buf, answers);
         return fs.writeFile(to, res);
       }));
-      console.log(`Patching ${chalk.green.bold('completed\n')}`);
+      console.log(chalk`Patching {green.bold completed}\n`);
       return answer;
     })
     .then(async (answers) => {
@@ -181,11 +177,9 @@ function init(basedir, morepatches = [], morequestions = []) {
       await execp('git add -A');
       await execp('git commit -m \'chore(init): created repository from template\'');
 
-      console.log(`\n\nProject ${chalk.blue(answers.name)} initialized. You can now push to GitHub\n`);
-      console.log(chalk.grey('  $ cd ') + chalk.grey.bold(answers.name));
-      console.log(chalk.grey('  $ git push --set-upstream origin main \n\n'));
+      console.log(chalk`\n\nProject {blue ${answers.name}} initialized. You can now push to GitHub\n`);
+      console.log(chalk`{grey   $ cd} {grey.bold ${answers.name}}`);
+      console.log(chalk`{grey   $ git push --set-upstream origin main}\n\n`);
       process.chdir(cwd);
     });
 }
-
-module.exports = init;
