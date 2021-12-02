@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/adobe/helix-library/compare/v1.4.12...v2.0.0) (2021-12-02)
+
+
+### Features
+
+* use esm ([#229](https://github.com/adobe/helix-library/issues/229)) ([a38e469](https://github.com/adobe/helix-library/commit/a38e469db9b7d42a1e1e0e03fd98fa7fbee79b53))
+
+
+### BREAKING CHANGES
+
+* shared library now exported as ESM
+
 ## [1.4.12](https://github.com/adobe/helix-library/compare/v1.4.11...v1.4.12) (2021-10-18)
 
 
