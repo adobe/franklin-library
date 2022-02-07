@@ -72,6 +72,8 @@ export default function init(basedir, morepatches = [], morequestions = []) {
     'dot-eslintignore': (buf) => buf,
     'dot-npmignore': (buf) => buf,
     'dot-gitignore': (buf) => buf,
+    'dot-eslintrc.cjs': (buf) => buf,
+    'dot-mocha-multi.json': (buf) => buf,
     ...morepatches,
   };
 
