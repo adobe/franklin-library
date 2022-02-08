@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/adobe/helix-library/compare/v2.0.1...v2.0.2) (2022-02-08)
+
+
+### Bug Fixes
+
+* **template:** add missing renovaterc to template ([a121758](https://github.com/adobe/helix-library/commit/a12175837907ed46281341920aee2dc3295a41c6))
+* **template:** include missing files ([db908d5](https://github.com/adobe/helix-library/commit/db908d537970cf5ed5f2cbd2d0bc34308a0be067))
+
 ## [2.0.1](https://github.com/adobe/helix-library/compare/v2.0.0...v2.0.1) (2022-01-24)
 
 
