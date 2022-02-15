@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/adobe/helix-library/compare/v2.0.2...v2.0.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* **package:** include correct default files ([31e552c](https://github.com/adobe/helix-library/commit/31e552c2b6cd777c7b9d30f0eab5265e9b767989))
+
 ## [2.0.2](https://github.com/adobe/helix-library/compare/v2.0.1...v2.0.2) (2022-02-08)
 
 
