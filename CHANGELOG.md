@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/adobe/helix-library/compare/v2.0.4...v2.0.5) (2022-04-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v10.1.0 ([cc8e358](https://github.com/adobe/helix-library/commit/cc8e358e410ae6bc13c6fd37618daea39bafc2e6))
+
 ## [2.0.4](https://github.com/adobe/helix-library/compare/v2.0.3...v2.0.4) (2022-03-03)
 
 
