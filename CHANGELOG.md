@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/adobe/helix-library/compare/v2.0.5...v2.0.6) (2022-04-30)
+
+
+### Bug Fixes
+
+* **deps:** update external fixes ([4585083](https://github.com/adobe/helix-library/commit/4585083da4b6fe95b78a898e0b17a4d576d63382))
+
 ## [2.0.5](https://github.com/adobe/helix-library/compare/v2.0.4...v2.0.5) (2022-04-17)
 
 
