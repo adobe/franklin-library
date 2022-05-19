@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/adobe/helix-library/compare/v2.0.6...v2.0.7) (2022-05-19)
+
+
+### Bug Fixes
+
+* use node16, codecov uploader and remove comittizen ([#265](https://github.com/adobe/helix-library/issues/265)) ([4b55411](https://github.com/adobe/helix-library/commit/4b5541151642cee36296d134af80c549ac8b1d4f))
+
 ## [2.0.6](https://github.com/adobe/helix-library/compare/v2.0.5...v2.0.6) (2022-04-30)
 
 
