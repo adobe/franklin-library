@@ -1,3 +1,10 @@
+## [2.0.9](https://github.com/adobe/helix-library/compare/v2.0.8...v2.0.9) (2022-07-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency inquirer to v9.0.1 ([268a35c](https://github.com/adobe/helix-library/commit/268a35cd2a8019e721eaf1553c971aa38084afce))
+
 ## [2.0.8](https://github.com/adobe/helix-library/compare/v2.0.7...v2.0.8) (2022-06-20)
 
 
