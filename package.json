@@ -1,11 +1,11 @@
 {
-  "name": "@adobe/create-helix-library",
+  "name": "@adobe/create-franklin-library",
   "version": "2.0.10",
-  "description": "Create Helix Library",
-  "main": "create-helix-shared.js",
+  "description": "Create Franklin Library",
+  "main": "create-franklin-shared.js",
   "type": "module",
   "bin": {
-    "create-helix-library": "create-helix-library.js"
+    "create-franklin-library": "create-franklin-library.js"
   },
   "scripts": {
     "test": "c8 mocha",
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe/helix-library.git"
+    "url": "https://github.com/adobe/franklin-library.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/adobe/helix-library/issues"
+    "url": "https://github.com/adobe/franklin-library/issues"
   },
-  "homepage": "https://github.com/adobe/helix-library#readme",
+  "homepage": "https://github.com/adobe/franklin-library#readme",
   "dependencies": {
     "chalk-template": "0.4.0",
     "fs-extra": "10.1.0",

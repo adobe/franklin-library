@@ -12,8 +12,8 @@
  */
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
-import init from './create-helix-shared.js';
+import init from './create-franklin-shared.js';
 
 // eslint-disable-next-line no-console
-console.log('Creating a new Helix Library');
+console.log('Creating a new Franklin Library');
 init(resolve(fileURLToPath(import.meta.url), '..'));
