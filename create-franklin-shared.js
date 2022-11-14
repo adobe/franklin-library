@@ -17,17 +17,17 @@ import path from 'path';
 import { exec } from 'child_process';
 
 function cleantitle(def) {
-  if (def.match(/Helix/i)) {
+  if (def.match(/Franklin/i)) {
     return def;
   }
-  return `Helix ${def}`;
+  return `Franklin ${def}`;
 }
 
 function cleanname(def) {
-  if (def.match(/Helix/i)) {
+  if (def.match(/Franklin/i)) {
     return def;
   }
-  return `helix-${def}`;
+  return `franklin-${def}`;
 }
 
 function dottify(filename) {
@@ -62,10 +62,10 @@ export default function init(basedir, morepatches = [], morequestions = []) {
     },
     'README.md': (buf, answers) => {
       const updated = buf.toString()
-        .replace(/@adobe\/helix-library/g, answers.fullscope)
-        .replace(/Helix Library/g, answers.title)
-        .replace(/An example library to be used in and with Project Helix/g, answers.description)
-        .replace(/adobe\/helix-library/g, answers.fullname);
+        .replace(/@adobe\/franklin-library/g, answers.fullscope)
+        .replace(/Franklin Library/g, answers.title)
+        .replace(/An example library to be used in and with Project Franklin/g, answers.description)
+        .replace(/adobe\/franklin-library/g, answers.fullname);
       return Buffer.from(updated);
     },
     'CHANGELOG.md': (buf) => buf,
@@ -98,7 +98,7 @@ export default function init(basedir, morepatches = [], morequestions = []) {
   {
     name: 'description',
     message: 'Description (for the README)',
-    default: 'An example library to be used in and with Project Helix',
+    default: 'An example library to be used in and with Project Franklin',
   },
   ...morequestions,
   ];
@@ -108,9 +108,9 @@ export default function init(basedir, morepatches = [], morequestions = []) {
     '.git',
     'template',
     '.vscode',
-    'create-helix-library.js',
-    'create-helix-shared.js',
-    'create-helix-service.js',
+    'create-franklin-library.js',
+    'create-franklin-shared.js',
+    'create-franklin-service.js',
     'package-lock.json',
     'CHANGELOG.md',
     ...Object.keys(patches),
