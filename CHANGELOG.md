@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/adobe/franklin-library/compare/v2.0.10...v3.0.0) (2022-11-14)
+
+
+### Features
+
+* rename to Create Franklin Library ([d4603d2](https://github.com/adobe/franklin-library/commit/d4603d20a9496acf5057af732fde457b7a134f9c))
+
+
+### BREAKING CHANGES
+
+* the name of the project, and the package name in NPM will change
+
 ## [2.0.10](https://github.com/adobe/helix-library/compare/v2.0.9...v2.0.10) (2022-09-05)
 
 
