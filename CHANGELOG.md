@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/adobe/franklin-library/compare/v3.0.2...v3.0.3) (2023-01-13)
+
+
+### Bug Fixes
+
+* Use node 18 for circleci ([3d33fea](https://github.com/adobe/franklin-library/commit/3d33feaceeca65d8a37b9452391c6a0370a6b013))
+
 ## [3.0.2](https://github.com/adobe/franklin-library/compare/v3.0.1...v3.0.2) (2022-12-31)
 
 
