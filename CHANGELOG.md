@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/adobe/franklin-library/compare/v3.0.3...v3.0.4) (2023-02-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/eslint-config-helix to v2 ([#301](https://github.com/adobe/franklin-library/issues/301)) ([fc28854](https://github.com/adobe/franklin-library/commit/fc28854e06ff741c69cb773092581b4a28098c9d))
+
 ## [3.0.3](https://github.com/adobe/franklin-library/compare/v3.0.2...v3.0.3) (2023-01-13)
 
 
