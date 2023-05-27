@@ -1,6 +1,6 @@
 {
   "name": "@adobe/create-franklin-library",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "Create Franklin Library",
   "main": "create-franklin-shared.js",
   "type": "module",
