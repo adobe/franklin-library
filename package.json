@@ -33,15 +33,15 @@
   "dependencies": {
     "chalk-template": "1.1.0",
     "fs-extra": "11.1.1",
-    "inquirer": "9.2.8"
+    "inquirer": "9.2.9"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "2.0.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "c8": "8.0.0",
+    "c8": "8.0.1",
     "codecov": "3.8.3",
-    "eslint": "8.45.0",
+    "eslint": "8.46.0",
     "husky": "8.0.3",
     "jsdoc-to-markdown": "8.0.0",
     "junit-report-builder": "3.0.1",
