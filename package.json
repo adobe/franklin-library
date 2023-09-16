@@ -33,7 +33,7 @@
   "dependencies": {
     "chalk-template": "1.1.0",
     "fs-extra": "11.1.1",
-    "inquirer": "9.2.10"
+    "inquirer": "9.2.11"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "2.0.3",
@@ -48,7 +48,7 @@
     "lint-staged": "14.0.1",
     "mocha": "10.2.0",
     "mocha-multi-reporters": "1.5.1",
-    "semantic-release": "21.1.1"
+    "semantic-release": "21.1.2"
   },
   "lint-staged": {
     "*.js": "eslint",
