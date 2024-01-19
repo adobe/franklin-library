@@ -1,3 +1,17 @@
+# [3.1.0](https://github.com/adobe/franklin-library/compare/v3.0.11...v3.1.0) (2024-01-19)
+
+
+### Bug Fixes
+
+* **github:** run correct test script ([eeff8df](https://github.com/adobe/franklin-library/commit/eeff8df759cb516a05e145c54b21e7323f7746ce))
+
+
+### Features
+
+* **ci:** use integrated github action for test, code coverage, semantic release ([46085e2](https://github.com/adobe/franklin-library/commit/46085e27c715061dae42baadbb8778a7b4f0f8fa))
+* **package:** add semantic-release-dry command ([2182c58](https://github.com/adobe/franklin-library/commit/2182c580c2e1bf9a037c7a630dec56afc0cba7bc))
+* **readme:** use badge for github actions instead of circleci ([b1f2ef6](https://github.com/adobe/franklin-library/commit/b1f2ef648f459676644c35b7e4c99a2e54ab76ae))
+
 ## [3.0.11](https://github.com/adobe/franklin-library/compare/v3.0.10...v3.0.11) (2023-11-11)
 
 
