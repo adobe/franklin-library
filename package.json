@@ -11,6 +11,7 @@
     "test": "c8 mocha",
     "lint": "eslint .",
     "semantic-release": "semantic-release",
+    "semantic-release-dry": "semantic-release --dry-run --branches $CI_BRANCH",
     "docs": "npx jsdoc2md -c .jsdoc.json --files 'src/*.js'  > docs/API.md",
     "prepare": "husky install"
   },

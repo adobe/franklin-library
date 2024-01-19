@@ -1,3 +1,4 @@
+name: Semantic Release Version Check
 on:
   push:
     branches-ignore:
