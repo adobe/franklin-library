@@ -34,7 +34,7 @@
   "dependencies": {
     "chalk-template": "1.1.0",
     "fs-extra": "11.2.0",
-    "inquirer": "9.2.12"
+    "inquirer": "9.2.13"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "2.0.6",
@@ -43,10 +43,10 @@
     "c8": "9.1.0",
     "codecov": "3.8.3",
     "eslint": "8.56.0",
-    "husky": "9.0.7",
-    "jsdoc-to-markdown": "8.0.0",
-    "junit-report-builder": "3.1.0",
-    "lint-staged": "15.2.0",
+    "husky": "9.0.10",
+    "jsdoc-to-markdown": "8.0.1",
+    "junit-report-builder": "3.2.1",
+    "lint-staged": "15.2.1",
     "mocha": "10.2.0",
     "mocha-multi-reporters": "1.5.1",
     "semantic-release": "22.0.12"
