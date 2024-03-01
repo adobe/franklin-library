@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/adobe/franklin-library/compare/v3.1.1...v3.1.2) (2024-03-01)
+
+
+### Bug Fixes
+
+* update semver check ([#371](https://github.com/adobe/franklin-library/issues/371)) ([507254a](https://github.com/adobe/franklin-library/commit/507254a2eee756a15a88775e9530c8d731437eca))
+
 ## [3.1.1](https://github.com/adobe/franklin-library/compare/v3.1.0...v3.1.1) (2024-02-10)
 
 
