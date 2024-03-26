@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/adobe/franklin-library/compare/v3.1.3...v3.1.4) (2024-03-26)
+
+
+### Bug Fixes
+
+* assert permissions ([54e78f7](https://github.com/adobe/franklin-library/commit/54e78f721060fb0997612ffb5a6229993c2984ee))
+
 ## [3.1.3](https://github.com/adobe/franklin-library/compare/v3.1.2...v3.1.3) (2024-03-16)
 
 
