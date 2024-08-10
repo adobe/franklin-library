@@ -1,3 +1,10 @@
+## [3.1.14](https://github.com/adobe/franklin-library/compare/v3.1.13...v3.1.14) (2024-08-10)
+
+
+### Bug Fixes
+
+* **deps:** update external fixes ([880dea8](https://github.com/adobe/franklin-library/commit/880dea85209ce25537efe32cd6757cb7abc2df0b))
+
 ## [3.1.13](https://github.com/adobe/franklin-library/compare/v3.1.12...v3.1.13) (2024-07-13)
 
 
