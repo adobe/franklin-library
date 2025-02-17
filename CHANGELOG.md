@@ -1,3 +1,10 @@
+## [3.1.25](https://github.com/adobe/franklin-library/compare/v3.1.24...v3.1.25) (2025-02-17)
+
+
+### Bug Fixes
+
+* **deps:** update external fixes ([#430](https://github.com/adobe/franklin-library/issues/430)) ([b5c39f4](https://github.com/adobe/franklin-library/commit/b5c39f4555fa59fdf4b3d6056e9eb930fdfc3c04))
+
 ## [3.1.24](https://github.com/adobe/franklin-library/compare/v3.1.23...v3.1.24) (2025-02-03)
 
 
