@@ -1,3 +1,10 @@
+## [3.1.26](https://github.com/adobe/franklin-library/compare/v3.1.25...v3.1.26) (2025-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency inquirer to v12.4.3 ([#431](https://github.com/adobe/franklin-library/issues/431)) ([4ab104e](https://github.com/adobe/franklin-library/commit/4ab104e71cad7c3cbe43729f46f774e011154c35))
+
 ## [3.1.25](https://github.com/adobe/franklin-library/compare/v3.1.24...v3.1.25) (2025-02-17)
 
 
