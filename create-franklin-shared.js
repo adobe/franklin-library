@@ -69,7 +69,7 @@ export default function init(basedir, morepatches = [], morequestions = []) {
       return Buffer.from(updated);
     },
     'CHANGELOG.md': (buf) => buf,
-    'dot-eslintignore': (buf) => buf,
+    'eslint.config.js': (buf) => buf,
     'dot-npmignore': (buf) => buf,
     'dot-gitignore': (buf) => buf,
     ...morepatches,
