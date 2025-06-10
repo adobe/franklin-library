@@ -1,3 +1,10 @@
+## [3.1.32](https://github.com/adobe/franklin-library/compare/v3.1.31...v3.1.32) (2025-06-10)
+
+
+### Bug Fixes
+
+* use eslint v9 in template ([#447](https://github.com/adobe/franklin-library/issues/447)) ([ab38857](https://github.com/adobe/franklin-library/commit/ab3885728821f99992316021582db4ca2b431a72))
+
 ## [3.1.31](https://github.com/adobe/franklin-library/compare/v3.1.30...v3.1.31) (2025-05-26)
 
 
