@@ -34,7 +34,7 @@
   "dependencies": {
     "chalk-template": "1.1.0",
     "fs-extra": "11.3.0",
-    "inquirer": "12.6.3"
+    "inquirer": "12.7.0"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "3.0.6",
