@@ -39,7 +39,7 @@
     "husky": "9.1.7",
     "jsdoc-to-markdown": "9.1.2",
     "junit-report-builder": "5.1.1",
-    "lint-staged": "16.1.2",
+    "lint-staged": "16.1.4",
     "mocha": "11.7.1",
     "mocha-multi-reporters": "1.5.1",
     "semantic-release": "24.2.7"
