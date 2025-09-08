@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/adobe/franklin-library#readme",
   "dependencies": {
-    "chalk-template": "1.1.0",
+    "chalk-template": "1.1.2",
     "fs-extra": "11.3.1",
     "inquirer": "12.9.4"
   },
