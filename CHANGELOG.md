@@ -1,3 +1,10 @@
+## [3.1.39](https://github.com/adobe/franklin-library/compare/v3.1.38...v3.1.39) (2025-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency chalk-template to v1.1.2 ([#468](https://github.com/adobe/franklin-library/issues/468)) ([b8ee0cc](https://github.com/adobe/franklin-library/commit/b8ee0cce5c0d47c068121212e4d16c7416ebfc7a))
+
 ## [3.1.38](https://github.com/adobe/franklin-library/compare/v3.1.37...v3.1.38) (2025-08-25)
 
 
