@@ -1,3 +1,10 @@
+## [3.1.41](https://github.com/adobe/franklin-library/compare/v3.1.40...v3.1.41) (2025-10-16)
+
+
+### Bug Fixes
+
+* update semantic-release to v25 and node to 24.x for OIDC ([f6a6081](https://github.com/adobe/franklin-library/commit/f6a60812cf7281c1b6981d49cc55ca926c54a2e8))
+
 ## [3.1.40](https://github.com/adobe/franklin-library/compare/v3.1.39...v3.1.40) (2025-09-16)
 
 
